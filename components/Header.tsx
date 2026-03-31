@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.currentTarget.style.color = "rgba(255,255,255,0.4)";
+    e.currentTarget.style.color = "rgba(255,255,255,0.8)";
   };
 
   return (
