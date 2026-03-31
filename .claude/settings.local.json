@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:skinbeautiful.ca)",
+      "WebFetch(domain:drevan.vercel.app)",
+      "WebFetch(domain:xd.adobe.com)"
+    ]
+  }
+}
