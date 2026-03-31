@@ -173,79 +173,82 @@ export default function Footer() {
         </div>
 
         {/* Social icons + Bottom info */}
-        <div>
-          {/* Top row: Social Icons only */}
-          <div style={{ marginBottom: "1.5rem" }}>
-            <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-              {[
-                { icon: "/icons/e4f6e38ecf0bd8bfbc40c4957dcb7dd4.png", label: "Facebook" },
-                { icon: "/icons/91bd99c4659da042c80d480cb4701438.png", label: "Instagram" },
-                { icon: "/icons/b7d027175b96d821fa0b2f31c7aaff5b.png", label: "TikTok" },
-                { icon: "/icons/19fb6b751529056df00a52edd6a9a754.png", label: "YouTube" }
-              ].map(social => (
-                <a
-                  key={social.label}
-                  href="#"
-                  aria-label={social.label}
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          flexWrap: "wrap",
+          gap: "2rem",
+        }}>
+
+          {/* Social Icons */}
+          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+            {[
+              { icon: "/icons/e4f6e38ecf0bd8bfbc40c4957dcb7dd4.png", label: "Facebook" },
+              { icon: "/icons/91bd99c4659da042c80d480cb4701438.png", label: "Instagram" },
+              { icon: "/icons/b7d027175b96d821fa0b2f31c7aaff5b.png", label: "TikTok" },
+              { icon: "/icons/19fb6b751529056df00a52edd6a9a754.png", label: "YouTube" }
+            ].map(social => (
+              <a
+                key={social.label}
+                href="#"
+                aria-label={social.label}
+                style={{
+                  width: "36px",
+                  height: "36px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  padding: "6px",
+                }}
+              >
+                <img
+                  src={social.icon}
+                  alt={social.label}
                   style={{
-                    width: "36px",
-                    height: "36px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    borderRadius: "4px",
-                    textDecoration: "none",
-                    padding: "6px",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1) opacity(1)",
                   }}
-                >
-                  <img
-                    src={social.icon}
-                    alt={social.label}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      filter: "brightness(0) invert(1) opacity(1)",
-                    }}
-                  />
-                </a>
-              ))}
-            </div>
+                />
+              </a>
+            ))}
           </div>
 
-          {/* Bottom row: Copyright + Links + Disclaimer */}
-          <div style={{ display: "flex", alignItems: "center", gap: "2rem", justifyContent: "flex-start" }}>
+          {/* Bottom text */}
+          <div style={{ flex: 1, textAlign: "right" }}>
             <p style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.7rem",
-              color: "rgba(255,255,255,0.7)",
-              margin: 0,
-              whiteSpace: "nowrap",
+              fontSize: "0.65rem",
+              color: "rgba(255,255,255,0.3)",
+              lineHeight: 1.6,
+              marginBottom: "0.5rem",
             }}>
               © 2026 GLODAE WELLNESS INC.
             </p>
-            <a href="#" style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "0.7rem",
-              color: "rgba(255,255,255,0.7)",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}>PRIVACY POLICY</a>
-            <a href="#" style={{
-              fontFamily: "var(--font-body)",
-              fontSize: "0.7rem",
-              color: "rgba(255,255,255,0.7)",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}>TERMS AND CONDITIONS</a>
+            <div style={{ display: "flex", gap: "1.5rem", justifyContent: "flex-end", marginBottom: "1rem" }}>
+              {["PRIVACY POLICY", "TERMS AND CONDITIONS"].map(item => (
+                <a key={item} href="#" style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.65rem",
+                  color: "rgba(255,255,255,0.3)",
+                  textDecoration: "none",
+                }}>{item}</a>
+              ))}
+            </div>
             <p style={{
               fontFamily: "var(--font-body)",
-              fontSize: "0.7rem",
-              color: "rgba(255,255,255,0.7)",
-              margin: 0,
+              fontSize: "0.6rem",
+              color: "rgba(255,255,255,0.25)",
+              lineHeight: 1.5,
+              maxWidth: "600px",
+              marginLeft: "auto",
             }}>
-              These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.
+              *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.
             </p>
           </div>
         </div>
